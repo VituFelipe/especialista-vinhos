@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Especialista em Vinhos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Seu Sommelier Virtual em Vinhos e Harmonização</h1>
+        <form id="wine-form">
+            <label for="dish">Prato:</label>
+            <input type="text" id="dish" name="dish" placeholder="Ex.: Salmão grelhado" required>
+            <label for="occasion">Ocasião:</label>
+            <input type="text" id="occasion" name="occasion" placeholder="Ex.: Jantar romântico" required>
+            <label for="preferences">Preferências:</label>
+            <input type="text" id="preferences" name="preferences" placeholder="Ex.: Vinho seco, até R$150" required>
+            <label for="region">Região (opcional):</label>
+            <input type="text" id="region" name="region" placeholder="Ex.: Bordeaux">
+            <button type="submit">Recomendar Vinho</button>
+        </form>
+        <div id="result" class="result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

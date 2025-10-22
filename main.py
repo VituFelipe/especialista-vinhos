@@ -35,17 +35,17 @@ app.add_middleware(
 
 # Modelo de dados para entrada do usuário com validações
 class WineRequest(BaseModel):
-    dish: str  # Ex.: "salmão grelhado"
-    occasion: str  # Ex.: "jantar romântico"
-    preferences: str  # Ex.: "vinho branco seco, até R$150"
-    region: str | None = None  # Opcional: ex.: "Bordeaux"
+    dish: str
+    occasion: str
+    preferences: str
+    region: str | None = None
 
     @validator('dish', 'occasion', 'preferences')
     def not_empty(cls, v):
         """Garante que os campos obrigatórios não sejam vazios."""
         if not v.strip():
             raise ValueError("Campo não pode ser vazio")
-        return v.strip().lower()  # Normaliza: remove espaços e converte para minúsculas
+        return v.strip().lower()
 
     @validator('preferences')
     def check_price(cls, v):
