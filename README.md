@@ -1,23 +1,44 @@
 # Especialista em Vinhos e Harmonização
 
-Aplicação web que recomenda vinhos personalizados usando a API do Gemini.
+![Banner do Projeto](https://via.placeholder.com/800x200?text=Especialista+em+Vinhos+e+Harmonização)  
+*(Substitua por uma imagem real de vinhedos ou taças de vinho para um visual mais atraente.)*
 
-## Setup
-1. Instale dependências: `py -3.14 -m pip install fastapi uvicorn google-generativeai python-dotenv`
-2. Crie `.env` com `GOOGLE_API_KEY=sua_chave`
-3. Rode: `py -3.14 -m uvicorn main:app --reload`
-4. Acesse: `http://127.0.0.1:8000/static/index.html`
+## Descrição do Serviço
 
-## Funcionalidades
-- Recomendações de vinhos com base em prato, ocasião, preferências e região.
-- Validações de entrada e cache para otimizar custos.
-- Integração com Gemini API (modelo gemini-2.5-flash).
+O "Especialista em Vinhos e Harmonização" é uma aplicação web inovadora que utiliza inteligência artificial para fornecer recomendações personalizadas de vinhos. Com base em entradas do usuário, como o tipo de prato, a ocasião, preferências de sabor e faixa de preço, e uma região opcional, a aplicação gera sugestões de vinhos ideais, incluindo detalhes como tipo, região de origem, notas de sabor e explicações de harmonização.
 
-## Custos
-- Usa tier gratuito (1.500 req/hora, 1M tokens entrada, 4K saída).
-- Cache reduz chamadas repetitivas.
+Este serviço é projetado para entusiastas de gastronomia, iniciantes em enologia e anfitriões de eventos, tornando o mundo dos vinhos mais acessível e agradável. A integração com a API do Gemini permite respostas inteligentes e contextuais, simulando o conselho de um sommelier profissional.
 
-## Limitações
-- Dependência da qualidade do prompt.
-- Requer conexão à internet.
-- Respostas do Gemini podem ser malformadas ocasionalmente.
+O projeto demonstra a aplicação prática de conceitos de integração entre frontend e backend, atendendo aos requisitos de desenvolvimento de um produto funcional com IA generativa.
+
+## Funcionalidades Principais
+
+- **Recomendações Personalizadas**: Insira o prato, ocasião, preferências (ex.: "vinho branco seco, até R$150") e região opcional para receber uma sugestão de vinho com detalhes completos.
+- **Validações e Regras de Negócio**:
+  - Campos obrigatórios não podem ser vazios.
+  - Preferências de preço devem incluir valores numéricos.
+  - Regiões limitadas a vinícolas conhecidas (ex.: Bordeaux, Marlborough) para garantir relevância.
+  - Normalização de entradas (conversão para minúsculas e remoção de espaços extras).
+- **Integração com IA**: Uso da API do Gemini (modelo `gemini-2.5-flash`) para gerar respostas em formato JSON estruturado.
+- **Otimização de Custos**: Cache de prompts com `@lru_cache` para reduzir chamadas repetitivas à API.
+- **Interface Web Intuitiva**: Formulário simples com exibição de resultados em tempo real.
+- **Monitoramento**: Logs de uso de tokens e respostas brutas para depuração.
+
+## Tecnologias Utilizadas
+
+- **Backend**: Python 3.14 com FastAPI (API RESTful), Pydantic (validações), google-generativeai (integração com Gemini), python-dotenv (gerenciamento de variáveis de ambiente).
+- **Frontend**: HTML5, CSS3, JavaScript (Fetch API para requisições assíncronas).
+- **Outros**: Logging para monitoramento, Re para limpeza de respostas, Functools para cache.
+- **Dependências**: Listadas no `requirements.txt` (gerado via `pip freeze > requirements.txt`).
+
+## Instalação e Setup
+
+### Pré-Requisitos
+- Python 3.14 ou superior.
+- Chave da API do Gemini obtida em [https://aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey).
+
+### Passos
+1. **Clone o Repositório**:
+   ```bash
+   git clone https://github.com/VituFelipe/especialista-vinhos.git
+   cd especialista-vinhos
