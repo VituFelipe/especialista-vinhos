@@ -1,6 +1,6 @@
 # Especialista em Vinhos e Harmonização
 
-![Banner do Projeto](images/bannerWine.jpg)  
+![Banner do Projeto](images/bannerFinal.jpg) 
 
 ## Descrição do Serviço
 
