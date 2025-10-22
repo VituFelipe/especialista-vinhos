@@ -1,6 +1,6 @@
 # Especialista em Vinhos e Harmonização
 
-![Banner do Projeto](https://via.placeholder.com/800x200?text=Especialista+em+Vinhos+e+Harmonização)  
+![Banner do Projeto](C:\Users\gustavo\Desktop\projetoAndreGemini\gemini-fastapi-09102025\static\bannerWine.jpg)  
 *(Substitua por uma imagem real de vinhedos ou taças de vinho para um visual mais atraente.)*
 
 ## Descrição do Serviço
